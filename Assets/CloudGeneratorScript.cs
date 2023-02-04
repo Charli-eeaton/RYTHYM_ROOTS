@@ -33,12 +33,19 @@ public class CloudGeneratorScript : MonoBehaviour
 
     void SpawnCloud()
     {
+        //random order
         int randomIndex = UnityEngine.Random.Range(0, clouds.Length);
         GameObject cloud = Instantiate(clouds[randomIndex]);
 
+        //random size
+        float scale = UnityEngine.Random.Range(0.8f, 1.2f);
+        cloud.transform.localScale = new Vector2(scale, scale);
 
+        //random pos
+        startPos.y = UnityEngine.Random.Range(startPos.y - 1f, startPos.y + 1f);
         cloud.transform.position = startPos;
 
+        //random speed
         float speed = UnityEngine.Random.Range(0.5f, 1.5f);
         cloud.GetComponent<cloud_script>().StartFloating(speed, endPoint.transform.position.x);
 
