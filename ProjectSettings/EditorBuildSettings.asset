@@ -17,4 +17,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DeathScene.unity
     guid: cdffadaaf664bf549b1651c022a489f8
+  - enabled: 1
+    path: Assets/Scenes/LevelSelect.unity
+    guid: 9d6d04138035e034fb001936826fd0f5
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 5ad4671ab6c24dd45a3646a6474859c7
+  - enabled: 1
+    path: Assets/Scenes/Summer.unity
+    guid: 2d17035e850f9444db1de7e36c5b0814
+  - enabled: 1
+    path: Assets/Scenes/Autumn.unity
+    guid: b9ed76cb65a111d4599cbc9297fd75a9
+  - enabled: 1
+    path: Assets/Scenes/Winter.unity
+    guid: e6c0a77030ba13248b7e9de5b499fca4
   m_configObjects: {}
