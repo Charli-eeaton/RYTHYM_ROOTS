@@ -9,6 +9,10 @@ public class SongBank : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        FindObjectOfType<SongManager>().StartSong("Drums");
+        FindObjectOfType<SongManager>().StartSong("Bass");
+        FindObjectOfType<SongManager>().StartSong("Lead");
+        /*
         switch (selection)
         {
             case 0:
@@ -37,12 +41,13 @@ public class SongBank : MonoBehaviour
                 break;
 
         }
+        */
 
     }
 
     void Update()
     {
-
+        /*
         if (hitCounter == 0)
         {
 
@@ -67,6 +72,7 @@ public class SongBank : MonoBehaviour
         {
             hitCounter = 4;
         }
+        */
     }
     /*
     public void changeLayer(string clipName)
