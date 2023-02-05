@@ -19,8 +19,7 @@ public class Note : MonoBehaviour
     {
         double timeSinceInstantiated = SongManager.GetAudioSourceTime() - timeInstantiated;
         float t = (float)(timeSinceInstantiated / (SongManager.Instance.noteTime * 2));
-
-        GetComponent<SpriteRenderer>().enabled = true;
+        
         if (t > 1)
         {
             Destroy(gameObject);

@@ -8,9 +8,11 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager Instance;
     public AudioSource missSFX;
 
-    public TMPro.TextMeshPro scoreText;
+    public TMPro.TextMeshPro comboText;
     public TMPro.TextMeshPro lifeText;
+    public TMPro.TextMeshPro scoreText;
 
+    static int score;
     static int comboScore;
     static int lifeScore = 50;
 
@@ -18,13 +20,15 @@ public class ScoreManager : MonoBehaviour
     {
         Instance = this;
         comboScore = 0;
-        lifeScore = 50;
+        lifeScore = 5000;
     }
     public static void Hit()
     {
         comboScore += 1;
-        lifeScore += 1;
+        lifeScore += 1;   
+        score += 100;
     }
+
     public static void Miss()
     {
         comboScore = 1;
@@ -41,7 +45,8 @@ public class ScoreManager : MonoBehaviour
     }
     private void Update()
     {
-        scoreText.text = comboScore.ToString();
+        comboText.text = comboScore.ToString();
         lifeText.text = lifeScore.ToString();
+        scoreText.text = score.ToString();
     }
 }

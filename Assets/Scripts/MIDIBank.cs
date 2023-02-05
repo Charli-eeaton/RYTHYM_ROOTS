@@ -4,9 +4,10 @@ using UnityEngine;
 using Melanchall.DryWetMidi.Core;
 using Melanchall.DryWetMidi.Interaction;
 
-public class MIDIBank
+public class MIDIBank : MonoBehaviour
 {
-    public MidiFile midiFile;
+
+    //public MidiFile midiFile;
 
 }
 
