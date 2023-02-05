@@ -7,11 +7,11 @@ public class DeathMenu : MonoBehaviour
 {
     public void Retry()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(3);
     }
 
     public void MainMenu()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 }

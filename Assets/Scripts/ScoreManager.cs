@@ -14,13 +14,13 @@ public class ScoreManager : MonoBehaviour
 
     static int score;
     static int comboScore;
-    static int lifeScore = 50;
+    static int lifeScore = 25;
 
     void Start()
     {
         Instance = this;
         comboScore = 0;
-        lifeScore = 20;
+        lifeScore = 25;
     }
     public static void Hit()
     {
