@@ -605,6 +605,51 @@ Transform:
   m_Father: {fileID: 2089316291}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &824892720
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 824892721}
+  - component: {fileID: 824892722}
+  m_Layer: 0
+  m_Name: SongBank
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &824892721
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824892720}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1150405908}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &824892722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824892720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8951021e582baba4c84924398abcd80f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selection: 0
 --- !u!1 &885957801
 GameObject:
   m_ObjectHideFlags: 0
@@ -859,6 +904,7 @@ Transform:
   - {fileID: 1488536266}
   - {fileID: 2033440617}
   - {fileID: 1122191973}
+  - {fileID: 824892721}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -952,12 +998,12 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1370536777}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 52b2f903f02d92d44a3f4639c8c0a35d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1068,19 +1114,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa603cb9d89008340a0a9f22d2216893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  music:
+  - clipName: Spring_Bass
+    clip: {fileID: 8300000, guid: 5cd6bbf72e168bd42ac3b658f4ae6db5, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - clipName: Spring_Chords
+    clip: {fileID: 8300000, guid: 46f791a0c59c377428c94011b9509f6a, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - clipName: Spring_Lead
+    clip: {fileID: 8300000, guid: 005de9ec1c045d643b739c656ecc64ef, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - clipName: Spring_Melody
+    clip: {fileID: 8300000, guid: 3e28e1f8f8a7f134bacc709ef6c2ab81, type: 3}
+    volume: 1
+    source: {fileID: 0}
   audioSource: {fileID: 1488536265}
   lanes:
   - {fileID: 562794207}
   - {fileID: 885957802}
   - {fileID: 1507027803}
   - {fileID: 480090845}
-  songDelayInSeconds: 0.1
+  songDelayInSeconds: 0
   marginOfError: 0.3
   inputDelayInSeconds: 0
   inputDelayInMilliseconds: 0
   fileLocation: test_riff.mid
   noteTime: 1
-  noteSpawnY: 7
+  noteSpawnY: -7
   noteTapY: -3
 --- !u!1 &1488536264
 GameObject:
@@ -1111,7 +1174,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 52b2f903f02d92d44a3f4639c8c0a35d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1287,7 +1350,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81c7a7931b0818840901b4e6cf484a4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitSFX: {fileID: 2033440616}
   missSFX: {fileID: 1122191972}
   scoreText: {fileID: 284747236}
 --- !u!4 &1950009288

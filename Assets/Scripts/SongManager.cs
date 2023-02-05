@@ -4,9 +4,12 @@ using System.Security.AccessControl;
 using UnityEngine;
 using Melanchall.DryWetMidi.Core;
 using Melanchall.DryWetMidi.Interaction;
+using System;
 
 public class SongManager : MonoBehaviour
 {
+    public Sound[] music;
+
     public static SongManager Instance;
     public AudioSource audioSource;
 
@@ -21,16 +24,38 @@ public class SongManager : MonoBehaviour
     public float noteTime;
     public float noteSpawnY;
     public float noteTapY;
-    public float noteDespawnY
+    private float noteDespawn;
+    public float noteDespawnY   
     {
         get
         {
-            return noteTapY - (noteSpawnY - noteTapY);
+            
+            noteDespawn = noteTapY - (noteSpawnY - noteTapY);
+            if (noteDespawn > 0)
+            {
+                noteDespawn = 0;
+            }
+            return noteDespawn;
+            
+            //return noteTapY - (noteSpawnY - noteTapY);
         }
     }
 
     public static MidiFile midiFile;
+    bool playerDeath = false;
 
+    void Awake()
+    {
+        foreach (Sound m in music)
+        {
+            m.source = gameObject.AddComponent<AudioSource>();
+            m.source.clip = m.clip;
+
+            m.source.volume = m.volume;
+
+        }
+    }
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -50,18 +75,40 @@ public class SongManager : MonoBehaviour
         var array = new Melanchall.DryWetMidi.Interaction.Note[notes.Count];
         notes.CopyTo(array, 0);
 
-        foreach(var lane in lanes)
+        foreach (var lane in lanes)
         {
-            lane.SetTimeStamps(array);
+           lane.SetTimeStamps(array);
         }
 
         Invoke(nameof(StartSong), songDelayInSeconds);
-
     }
 
-    public void StartSong()
+    public void StartSong(string clipName)
     {
-        audioSource.Play();
+        Sound m = Array.Find(music, m => m.clipName == clipName);
+        m.source.Play();
+        //audioSource.Play();
+        
+    }
+
+    public void StopSong(string clipName)
+    {
+        Sound m = Array.Find(music, m => m.clipName == clipName);
+        m.source.Stop();
+    }
+
+    public void changeTrackLayer(string clipName)
+    {
+        Sound m = Array.Find(music, m => m.clipName == clipName);
+        if (m.volume != 1)
+        {
+            m.volume = 1f;
+        }
+        else
+        {
+            m.volume = 0f;
+        }
+        
     }
 
     public static double GetAudioSourceTime()
@@ -72,6 +119,36 @@ public class SongManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+ 
     }
+
+    public void killSwitch(bool playerDeathState)
+    {
+        playerDeath = playerDeathState;
+        //ChangePlayerDeath(playerDeath);
+        returnPlayerDeath();
+        UnityEngine.Debug.Log(playerDeath);
+        if (playerDeath == true)
+        {
+            //Time.timeScale = 0;
+            //Destroy(gameObject);
+            //(transform.GetComponent<Lane>() as MonoBehaviour).enabled = false;
+        }
+        if (playerDeath == false)
+        {
+        }
+    }
+
+    public void ChangePlayerDeath(bool playerDeathState)
+    {
+        playerDeath = playerDeathState;
+        GetDataFromMidi();
+
+    }
+
+    public bool returnPlayerDeath()
+    {
+        return playerDeath;
+    }
+
 }

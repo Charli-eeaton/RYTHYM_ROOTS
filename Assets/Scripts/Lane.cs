@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using Melanchall.DryWetMidi.Interaction;
 using System.Configuration;
+using System.ComponentModel.Design;
 
 public class Lane : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class Lane : MonoBehaviour
 
     int spawnIndex = 0;
     int inputIndex = 0;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,52 +40,63 @@ public class Lane : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (spawnIndex < timeStamps.Count)
-        {
-            if (SongManager.GetAudioSourceTime() >= timeStamps[spawnIndex] - SongManager.Instance.noteTime)
-            {
-                var note = Instantiate(notePrefab, transform);
-                notes.Add(note.GetComponent<Note>());
-                note.GetComponent<Note>().assignedTime = (float)timeStamps[spawnIndex];
-                spawnIndex++;
-            }
-        }
 
-        if (inputIndex < timeStamps.Count)
-        {
-            double timeStamp = timeStamps[inputIndex];
-            double marginOfError = SongManager.Instance.marginOfError;
-            double audioTime = SongManager.GetAudioSourceTime() - (SongManager.Instance.inputDelayInMilliseconds / 1000.0);
-
-            if (Input.GetKeyDown(input))
+            if (spawnIndex < timeStamps.Count)
             {
-                if (Math.Abs(audioTime - timeStamp) < marginOfError)
+                if (SongManager.GetAudioSourceTime() >= timeStamps[spawnIndex] - SongManager.Instance.noteTime)
                 {
-                    Hit();
-                    print($"Hit on {inputIndex} note");
-                    Destroy(notes[inputIndex].gameObject);
-                    inputIndex++;
-                }
-                else
-                {
-                    print($"Hit inaccurate on {inputIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
+                    var note = Instantiate(notePrefab, transform);
+                    notes.Add(note.GetComponent<Note>());
+                    note.GetComponent<Note>().assignedTime = (float)timeStamps[spawnIndex];
+                    spawnIndex++;
                 }
             }
-            if (timeStamp + marginOfError <= audioTime)
+
+            if (inputIndex < timeStamps.Count)
             {
-                Miss();
-                print($"Missed {inputIndex} note");
+                double timeStamp = timeStamps[inputIndex];
+                double marginOfError = SongManager.Instance.marginOfError;
+                double audioTime = SongManager.GetAudioSourceTime() - (SongManager.Instance.inputDelayInMilliseconds / 1000.0);
+
+                if (Input.GetKeyDown(input))
+                {
+                    if (Math.Abs(audioTime - timeStamp) < marginOfError)
+                    {
+                        Hit();
+                        //print($"Hit on {inputIndex} note");
+                        Destroy(notes[inputIndex].gameObject);
+                        SongBank.increaseLane();
+                        inputIndex++;
+                    }
+                    else
+                    {
+                        //print($"Hit inaccurate on {inputIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
+                    }
+                }
+                if (timeStamp + marginOfError <= audioTime)
+                {
+                    Miss();
+                //print($"Missed {inputIndex} note");
+                SongBank.decreaseLane();
                 inputIndex++;
+                }
             }
-        }
+        
     }
 
     private void Hit()
     {
         ScoreManager.Hit();
+        Death.hitNoteCounter();
+        
+        
     }
     private void Miss()
     {
         ScoreManager.Miss();
+        Death.missedNoteCounter();
+        
     }
+
+
 }
