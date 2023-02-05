@@ -31,9 +31,9 @@ public class SongManager : MonoBehaviour
         {
             
             noteDespawn = noteTapY - (noteSpawnY - noteTapY);
-            if (noteDespawn > 0)
+            if (noteDespawn > 1)
             {
-                noteDespawn = 0;
+                noteDespawn = 1;
             }
             return noteDespawn;
             

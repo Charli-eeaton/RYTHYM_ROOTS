@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System;
 
 public class Death : MonoBehaviour
 {
@@ -9,6 +11,9 @@ public class Death : MonoBehaviour
     static int missedNote;
     private int selection = 0;
     private bool playerDeathState = false;
+
+    public static event Action onPlayerDeath;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +49,7 @@ public class Death : MonoBehaviour
                     //FindObjectOfType<SongManager>().StopSong("Spring_Layer_1");
                     playerDeathState = true;
                     FindObjectOfType<SongManager>().ChangePlayerDeath(playerDeathState);
+                    //SceneManager.LoadScene(3);
                     //Destroy(gameObject);
                 }
                 break;
