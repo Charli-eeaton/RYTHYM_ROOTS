@@ -20,7 +20,7 @@ public class ScoreManager : MonoBehaviour
     {
         Instance = this;
         comboScore = 0;
-        lifeScore = 5000;
+        lifeScore = 20;
     }
     public static void Hit()
     {

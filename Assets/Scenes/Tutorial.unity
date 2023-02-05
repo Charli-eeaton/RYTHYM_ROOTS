@@ -2267,7 +2267,7 @@ MonoBehaviour:
   marginOfError: 0.1
   inputDelayInSeconds: 0
   inputDelayInMilliseconds: 0
-  fileLocation: dev_tutorial_midi_map.mid
+  fileLocation: tutorial_midimap.mid
   noteTime: 1
   noteSpawnY: -5
   noteTapY: 0
