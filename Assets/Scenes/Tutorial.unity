@@ -376,7 +376,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c99f5b33073c29b439101cbf5559444b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 31b7eee3136851342a625e39435cce04, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
@@ -2157,16 +2157,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music:
-  - clipName: Spring
-    clip: {fileID: 8300000, guid: c99f5b33073c29b439101cbf5559444b, type: 3}
+  - clipName: Drums
+    clip: {fileID: 8300000, guid: 31b7eee3136851342a625e39435cce04, type: 3}
     volume: 1
     source: {fileID: 0}
-  - clipName: Spring_Chords
-    clip: {fileID: 8300000, guid: 46f791a0c59c377428c94011b9509f6a, type: 3}
+  - clipName: Bass
+    clip: {fileID: 8300000, guid: d7bf00993d028fb4db23e102f2674cc5, type: 3}
     volume: 1
     source: {fileID: 0}
-  - clipName: Spring_Lead
-    clip: {fileID: 8300000, guid: 005de9ec1c045d643b739c656ecc64ef, type: 3}
+  - clipName: Lead
+    clip: {fileID: 8300000, guid: a5296afeed232c0479a8b87322764b1b, type: 3}
     volume: 1
     source: {fileID: 0}
   - clipName: Spring_Melody
@@ -2183,7 +2183,7 @@ MonoBehaviour:
   marginOfError: 0.1
   inputDelayInSeconds: 0
   inputDelayInMilliseconds: 0
-  fileLocation: spring_120_midi.mid
+  fileLocation: dev_tutorial_midi_map.mid
   noteTime: 1
   noteSpawnY: -5
   noteTapY: 0

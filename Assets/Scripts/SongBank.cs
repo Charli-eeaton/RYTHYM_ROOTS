@@ -9,7 +9,9 @@ public class SongBank : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FindObjectOfType<SongManager>().StartSong("Spring");
+        FindObjectOfType<SongManager>().StartSong("Drums");
+        FindObjectOfType<SongManager>().StartSong("Bass");
+        FindObjectOfType<SongManager>().StartSong("Lead");
         /*
         switch (selection)
         {
