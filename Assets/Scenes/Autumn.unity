@@ -1000,7 +1000,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c99f5b33073c29b439101cbf5559444b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8ed3e568cf590df499286f47dfdbabe8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
@@ -1988,8 +1988,7 @@ MonoBehaviour:
   noteRestriction: 1
   input: 275
   notePrefab: {fileID: 2201844942043171223, guid: 3cb906e641a3c8940a45ecd4d634f946, type: 3}
-  timeStamps:
-  - 0
+  timeStamps: []
 --- !u!4 &1350864041
 Transform:
   m_ObjectHideFlags: 0
@@ -2095,8 +2094,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music:
-  - clipName: Spring
-    clip: {fileID: 8300000, guid: c99f5b33073c29b439101cbf5559444b, type: 3}
+  - clipName: Drums
+    clip: {fileID: 8300000, guid: 8ed3e568cf590df499286f47dfdbabe8, type: 3}
     volume: 1
     source: {fileID: 0}
   - clipName: Spring_Chords
@@ -2121,7 +2120,7 @@ MonoBehaviour:
   marginOfError: 0.1
   inputDelayInSeconds: 0
   inputDelayInMilliseconds: 0
-  fileLocation: spring_120_midi.mid
+  fileLocation: autumn_midimap.mid
   noteTime: 1
   noteSpawnY: -5
   noteTapY: 0

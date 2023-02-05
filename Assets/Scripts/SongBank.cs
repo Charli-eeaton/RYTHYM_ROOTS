@@ -10,8 +10,6 @@ public class SongBank : MonoBehaviour
     void Start()
     {
         FindObjectOfType<SongManager>().StartSong("Drums");
-        FindObjectOfType<SongManager>().StartSong("Bass");
-        FindObjectOfType<SongManager>().StartSong("Lead");
         /*
         switch (selection)
         {
