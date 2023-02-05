@@ -1914,7 +1914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music:
-  - clipName: Spring
+  - clipName: Drums
     clip: {fileID: 8300000, guid: c99f5b33073c29b439101cbf5559444b, type: 3}
     volume: 1
     source: {fileID: 0}
@@ -1940,7 +1940,7 @@ MonoBehaviour:
   marginOfError: 0.1
   inputDelayInSeconds: 0
   inputDelayInMilliseconds: 0
-  fileLocation: spring_120_midi.mid
+  fileLocation: spring_midimap.mid
   noteTime: 1
   noteSpawnY: -5
   noteTapY: 0

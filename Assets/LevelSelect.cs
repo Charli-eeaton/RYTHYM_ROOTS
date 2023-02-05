@@ -18,17 +18,17 @@ public class LevelSelect : MonoBehaviour
 
     public void Summer()
     {
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(6);
     }
 
     public void Autumn()
     {
-        SceneManager.LoadScene(8);
+        SceneManager.LoadScene(7);
     }
 
     public void Winter()
     {
-        SceneManager.LoadScene(9);
+        SceneManager.LoadScene(8);
     }
 
     public void MainMenu()
