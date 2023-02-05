@@ -2148,8 +2148,7 @@ MonoBehaviour:
   noteRestriction: 1
   input: 275
   notePrefab: {fileID: 2201844942043171223, guid: 3cb906e641a3c8940a45ecd4d634f946, type: 3}
-  timeStamps:
-  - 0
+  timeStamps: []
 --- !u!4 &1981920797
 Transform:
   m_ObjectHideFlags: 0
