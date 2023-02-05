@@ -38,7 +38,7 @@ public class CloudGeneratorScript : MonoBehaviour
         GameObject cloud = Instantiate(clouds[randomIndex]);
 
         //random size
-        float scale = UnityEngine.Random.Range(0.8f, 1.2f);
+        float scale = UnityEngine.Random.Range(5.8f, 5.2f);
         cloud.transform.localScale = new Vector2(scale, scale);
 
         //random pos
