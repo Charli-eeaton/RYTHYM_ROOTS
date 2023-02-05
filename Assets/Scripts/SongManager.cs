@@ -31,6 +31,7 @@ public class SongManager : MonoBehaviour
         {
             
             noteDespawn = noteTapY - (noteSpawnY - noteTapY);
+            UnityEngine.Debug.Log(noteDespawn);
             if (noteDespawn > 1)
             {
                 noteDespawn = 1;

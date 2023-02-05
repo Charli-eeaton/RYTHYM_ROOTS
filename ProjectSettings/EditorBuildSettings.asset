@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RhythmRoots.unity
     guid: eb5fbb44a21d9784485f01001bc5cd92
+  - enabled: 1
+    path: Assets/Scenes/DeathScene.unity
+    guid: cdffadaaf664bf549b1651c022a489f8
   m_configObjects: {}
