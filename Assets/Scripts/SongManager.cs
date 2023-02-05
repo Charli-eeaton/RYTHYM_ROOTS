@@ -9,6 +9,7 @@ using System;
 public class SongManager : MonoBehaviour
 {
     public Sound[] music;
+    public MIDIBank[] midiBank;
 
     public static SongManager Instance;
     public AudioSource audioSource;
@@ -42,7 +43,9 @@ public class SongManager : MonoBehaviour
     }
 
     public static MidiFile midiFile;
+
     bool playerDeath = false;
+
 
     void Awake()
     {
@@ -54,13 +57,21 @@ public class SongManager : MonoBehaviour
             m.source.volume = m.volume;
 
         }
+        /*
+        foreach (MIDIBank n in midiBank)
+        {
+            n.midiFile = gameObject.AddComponent<MidiFile>();
+        }
+        */
     }
     
     // Start is called before the first frame update
     void Start()
     {
         Instance = this;
+
         ReadFromFile();
+
     }
 
     private void ReadFromFile()

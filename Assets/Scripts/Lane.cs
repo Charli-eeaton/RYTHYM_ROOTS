@@ -17,6 +17,7 @@ public class Lane : MonoBehaviour
     int spawnIndex = 0;
     int inputIndex = 0;
 
+    public int selection = 0;
 
 
     // Start is called before the first frame update
@@ -30,7 +31,7 @@ public class Lane : MonoBehaviour
         foreach (var note in array)
         {
             if (note.NoteName == noteRestriction)
-            {
+            {    
                 var metricTimeSpan = TimeConverter.ConvertTo<MetricTimeSpan>(note.Time, SongManager.midiFile.GetTempoMap());
                 timeStamps.Add((double) metricTimeSpan.Minutes * 60f + metricTimeSpan.Seconds + (double)metricTimeSpan.Milliseconds / 1000f);
             }
@@ -56,7 +57,7 @@ public class Lane : MonoBehaviour
             {
                 double timeStamp = timeStamps[inputIndex];
                 double marginOfError = SongManager.Instance.marginOfError;
-                double audioTime = SongManager.GetAudioSourceTime() - (SongManager.Instance.inputDelayInMilliseconds / 1000.0);
+                double audioTime = SongManager.GetAudioSourceTime() - (SongManager.Instance.inputDelayInMilliseconds / 1000.0f);
 
                 if (Input.GetKeyDown(input))
                 {
@@ -65,7 +66,7 @@ public class Lane : MonoBehaviour
                         Hit();
                         //print($"Hit on {inputIndex} note");
                         Destroy(notes[inputIndex].gameObject);
-                        SongBank.increaseLane();
+                        //SongBank.increaseLane();
                         inputIndex++;
                     }
                     else
@@ -76,8 +77,8 @@ public class Lane : MonoBehaviour
                 if (timeStamp + marginOfError <= audioTime)
                 {
                     Miss();
-                //print($"Missed {inputIndex} note");
-                SongBank.decreaseLane();
+                print($"Missed {inputIndex} note");
+                //SongBank.decreaseLane();
                 inputIndex++;
                 }
             }
@@ -97,6 +98,5 @@ public class Lane : MonoBehaviour
         Death.missedNoteCounter();
         
     }
-
 
 }
