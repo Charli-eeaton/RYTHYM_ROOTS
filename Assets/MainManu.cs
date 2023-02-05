@@ -9,4 +9,8 @@ public class MainManu : MonoBehaviour
     {
         SceneManager.LoadScene("RhythmRoots");
     }
+    public void LevelSelect()
+    {
+        SceneManager.LoadScene("LevelSelect");
+    }
 }
