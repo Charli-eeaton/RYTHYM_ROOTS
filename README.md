@@ -1,1 +1,3 @@
 # RYTHYM_ROOTS
+
+Root Note is a rhythm-based game that follows the journey of a tree as it grows through the four seasons. Players must keep the beat and hit the correct keys in time with the music to help the tree thrive and reach new heights. Each different season must be played in rhythm using the four directional inputs to progress the tree's growth . With each successful performance, the tree will flourish, blossom and change with the seasons, eventually becoming a towering masterpiece. With a catchy soundtrack, vibrant visuals, and addictive gameplay, "Root Note" is a great game for anyone who loves rhythm games and nature.
