@@ -24,17 +24,15 @@ To streamline development and enhance replayability, we programmed a custom rhyt
   - Unity  
   - Meleanchall plugin  
   - Ableton Live  
-  - Logic Pro  
+  - Logic Pro
 
+## 🌐 Learn More
+
+- [Root Note on Global Game Jam 2023](https://v3.globalgamejam.org/2023/games/root-note-4)
 
 
 
 <br><be>
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/347e328e-1b28-483b-af3c-184d22c0a17b" alt="Root Note Screenshot Main Menu" />
-</p>
-
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/d0cbb6b3-10d2-4a4d-9130-7486fdd852b2" alt="Root Note Screenshot" />
